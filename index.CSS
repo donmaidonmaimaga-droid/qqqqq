@@ -1,1 +1,83 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+}
 
+#game {
+  width: 360px;
+  height: 300px;
+  border: 2px solid #333;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  display: none;
+  cursor: crosshair;
+}
+
+/* 目の枠 */
+.eye {
+  width: 160px;
+  height: 90px;
+  border: 5px solid black;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  overflow: hidden;
+}
+
+/* 黒目 */
+.pupil {
+  width: 36px;
+  height: 36px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 27px;
+  left: 60px;
+  transition: 0.3s;
+}
+
+/* 閉じた目 */
+.eye.closed {
+  background: transparent;
+  border: none;
+}
+
+.eye.closed::before {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 10px;
+  background: black;
+  top: 45px;
+  left: 0;
+  border-radius: 20px;
+}
+
+.eye.closed::after {
+  content: "｜ ｜ ｜ ｜ ｜ ｜";
+  position: absolute;
+  font-size: 14px;
+  letter-spacing: 6px;
+  top: 57px;
+  left: 14px;
+}
+
+/* 赤目（失敗時） */
+.red {
+  background: pink;
+}
+
+/* 目薬 */
+.drop {
+  width: 14px;
+  height: 20px;
+  background: deepskyblue;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#message {
+  font-size: 26px;
+  font-weight: bold;
+}
